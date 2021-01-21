@@ -299,7 +299,7 @@
                 <body>
                     <nav>
                         <div class='logo'>
-                            Brand
+                            Easy<span style='color: #e0ac1c'><i>Cart</i></span>
                         </div>
                         <input type='checkbox' id='click'>
                         <label for='click' class='menu-btn'>
