@@ -10,7 +10,7 @@ $password_2 = "";
 $errors = array();
 
 // Connect to the database
-$db = mysqli_connect('localhost', 'root', '', 'easycartdb', '3306');
+$db = mysqli_connect('localhost', 'root', '', 'easycartdb', '3308');
 
 // If the 'Register' button is clicked
 if (isset($_POST['register'])) {
@@ -75,7 +75,7 @@ if (isset($_POST['register'])) {
             date timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
         )";
         mysqli_query($db, $sql);
-        
+
         // Redirecting to the home page
         header('location: index.php');
     }
@@ -160,7 +160,7 @@ if (isset($_POST['delete'])) {
 if (isset($_GET['logout'])) {
     session_destroy();
     if (isset($_SESSION['admin'])) {
-        unset($_SESSION['admin']);    
+        unset($_SESSION['admin']);
     }
     unset($_SESSION['username']);
     header('location: login.php');
