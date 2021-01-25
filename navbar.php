@@ -156,7 +156,7 @@
                             <li><a class='active' href='./index.php'>Home</a></li>
                             <li><a href='./products.php'>Products</a></li>
                             <li><a href='./aboutus.php'>About Us</a></li>
-                            <li><a href='./help.php'>Help</a></li>
+                            <li><a href='./help.php'>FAQ</a></li>
                             <li><a href='./admin.php'>Admin</a></li>
                             <li><a href='#'>Logout</a></li>
                         </ul>
@@ -321,7 +321,7 @@
                             <li><a class='active' href='./index.php'>Home</a></li>
                             <li><a href='./products.php'>Products</a></li>
                             <li><a href='./aboutus.php'>About Us</a></li>
-                            <li><a href='./help.php'>Help</a></li>
+                            <li><a href='./help.php'>FAQ</a></li>
                             <li><a href='./account.php'>Account</a></li>
                             <li><a href='./cart.php'>Cart</a></li>
                             <li><a href='#'>Logout</a></li>

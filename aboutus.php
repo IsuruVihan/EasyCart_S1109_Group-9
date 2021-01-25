@@ -117,13 +117,13 @@
                 <div class="col-4">
                   <img src="./images/developers/isuru.png" alt="" >
 
-                  <p style="text-align:center;"><b>Isuru Vihan</b></p>
+                  <p style="text-align:center;"><b>Isuru </b></p>
 
 
 
                 </div>
                 <div class="col-4">
-                  <img src="./images/developers/avishka.png" alt="" >
+                  <img  src="./images/developers/avi.png" alt="">
 
                   <p style="text-align:center;"><b>Avishka</b></p>
 
