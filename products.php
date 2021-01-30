@@ -4,43 +4,46 @@
     <head>
         <title>EasyCart | Products</title>
         <link rel="stylesheet" href="navbar.css">
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    	<link rel="preconnect" href="https://fonts.gstatic.com" />
-  		<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+        <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
+    	<!-- <link rel="preconnect" href="https://fonts.gstatic.com" /> -->
+  		<!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" /> -->
     </head>
-    <body>
+    <body style="background: url('./images/doodle2')">
         <!-- Navbar -->
         <?php include('navbar.php'); ?>
+        
         <center>
-            <table style='width: 90%; margin-top: 2em;'>
+            <table style='width: 90%; margin-top: 2em'>
                 <tr>
                     <th style='border: 0px solid black; width: 40%; vertical-align: top; border-radius: 10px;' rowspan='2'>
                         <?php
-                            // Display errors related to adding a product
+                            // Display errors related to adding a product/rider
                             include('errors.php');
 
-                            // Add product
+                            // Add product / rider
                             if (isset($_SESSION['username']) && $_SESSION['username'] != 'ucsc') {
                                 include('addproduct.php');
+                            } else if ($_SESSION['username'] == 'ucsc') {
+                                include('addrider.php');
                             }
                         ?>
                     </th>
-                    <th style='border: 0px solid black; width: 60%; vertical-align: top; height: 23%; border-radius: 10px; background: #f2f2f2'>
+                    <th style='border: 1px solid black; width: 60%; vertical-align: top; height: 23%; border-radius: 10px; background: #f2f2f2'>
                         <?php
                             // Filter
                             echo "
                                 <center>
-                                    <form method='post' action='products.php' style='width: 50%;'>
+                                    <form method='post' action='products.php' style='width: 50%'>
                                         <label for='searchcategory'>Select a category:</label>
-                                        <select name='searchcategory' id='searchcategory'>
-                                            <option value='all'>All</option>
-                                            <option value='category1'>Category1</option>
-                                            <option value='category2'>Category2</option>
-                                            <option value='category3'>Category3</option>
-                                            <option value='category4'>Category4</option>
-                                        </select>
                                         <center>
-                                            <input type='submit' id='selectcategory' name='selectcategory' value='Filter' style='background: #e0ac1c' />
+                                            <select name='searchcategory' id='searchcategory'>
+                                                <option value='all'>All</option>
+                                                <option value='category1'>Category1</option>
+                                                <option value='category2'>Category2</option>
+                                                <option value='category3'>Category3</option>
+                                                <option value='category4'>Category4</option>
+                                            </select>
+                                            <input type='submit' id='selectcategory' name='selectcategory' value='Filter' style='background: #e0ac1c; margin: 1em' />
                                         </center>                                   
                                     </form>
                                 </center>

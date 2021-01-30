@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -45,7 +44,6 @@ html, body {
     color: #fff;
     user-select: none;
     border-radius: 15px 15px 0 0;
-    background: #0b1750;
 }
 
 .wrapper form {
@@ -72,7 +70,7 @@ html, body {
 
 .wrapper form .field input:focus,
 form .field input:valid {
-    border-color: #4158d0;
+    border-color: #e0ac1c;
 }
 
 .wrapper form .field label {
@@ -128,7 +126,7 @@ form .content .pass-link {
 }
 
 form .field input[type="submit"] {
-    color: #fff;
+    color: black;
     border: none;
     padding-left: 0;
     margin-top: -10px;

@@ -64,7 +64,7 @@ echo "
             </style>
         </head>
         <body>
-            <div class='container' style='margin: 1em; margin-right: 3em; width: 95%; position: sticky'>
+            <div class='container' style='margin: 1em; margin-right: 3em; width: 95%; position: sticky; border: 1px solid black'>
                 <form action='products.php' method='post' style='position: sticky;'>
                     <center>
                         <h1 style='margin: 0.7em'>Publish a product</h1>

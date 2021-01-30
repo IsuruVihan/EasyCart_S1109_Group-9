@@ -4,7 +4,7 @@
     <head>
         <title>EasyCart | Login</title>
         <style>
-            @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+            /* @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap'); */
             * {
                 margin: 0;
                 padding: 0;
@@ -24,8 +24,7 @@
                 height: 100%;
                 width: 100%;
                 place-items: center;
-                /* background: #ffffff; */
-                /* background: linear-gradient(-135deg, #c850c0, #4158d0); */
+                background: white;
             }
 
             ::selection {
@@ -38,9 +37,13 @@
                 position: sticky;
                 margin-right: 10vw;
                 width: 380px;
-                background: #fff;
+                background: #e0ac1c;
+                border-left: 3px solid black;
+                border-right: 3px solid black;
+                border-top: 3px solid black;
+                border-bottom: 3px solid black;
                 border-radius: 15px;
-                box-shadow: 0px 40px 40px rgba(0,0,0,0.1);
+                /* box-shadow: 0px 40px 40px rgba(0,0,0,0.1); */
             }
 
             .wrapper .title {
@@ -48,10 +51,10 @@
                 font-weight: 600;
                 text-align: center;
                 line-height: 100px;
-                color: #fff;
+                color: black;
                 user-select: none;
                 border-radius: 15px 15px 0 0;
-                background: #0b1750;
+                /* background: #e0ac1c; */
             }
 
             .wrapper form {
@@ -78,14 +81,14 @@
 
             .wrapper form .field input:focus,
             form .field input:valid {
-                border-color: #4158d0;
+                border-color: black;
             }
 
             .wrapper form .field label {
                 position: absolute;
                 top: 50%;
                 left: 20px;
-                color: #999999;
+                color: black;
                 font-weight: 400;
                 font-size: 17px;
                 pointer-events: none;
@@ -124,13 +127,13 @@
             }
 
             form .content label {
-                color: #262626;
+                color: #e0ac1c;
                 user-select: none;
                 padding-left: 5px;
             }
 
             form .content .pass-link {
-                color: "";
+                color: #e0ac1c;
             }
 
             form .field input[type="submit"] {
@@ -141,7 +144,7 @@
                 font-size: 20px;
                 font-weight: 500;
                 cursor: pointer;
-                background: #0b1750;
+                background: black;
                 transition: all 0.3s ease;
             }
 
@@ -167,16 +170,45 @@
             }
         </style>
     </head>
-    <body style="background-image: url('./images/loginbackground.jpg')">
+    <body style="background: url('./images/doodle2')">
         <table>
             <tr>
                 <td>
-                    <img style="width: 40%; margin-left: 18vw;" src="./images/logo.png" />
+                    <table style="border: 0px solid black; padding-right: '2em'">
+                        <!-- <tr>
+                            <td>
+                                <center>
+                                    <img src="./images/cart.png" style="width: 50%">
+                                </center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <center>
+                                    <b><p style="font-size: 60px; color: black">Easy<span style='color: #e0ac1c'><i>Cart</i></span></p></b>
+                                </center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <center>
+                                    <b><p style="font-size: 20px; color: black">Everything you need to buy in <span style='color: #e0ac1c'>one place</span></p></b>
+                                </center>
+                            </td>
+                        </tr> -->
+                        <tr>
+                            <td>
+                                <center>
+                                    <img src="./images/doodle3.jpg" width="70%">
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
                 </td>
                 <td>
-                    <div class="wrapper">
+                    <div class="wrapper" style="margin-left: 5em">
                         <div class="title">
-                            Login Form
+                            Login <span style="color: black">Form</span>
                         </div>
                         <form method="post" action="login.php">
                             <!-- Display validation errors --> 
@@ -184,22 +216,22 @@
                                 <?php include('errors.php'); ?>
                             </div>
                             <div class="field">
-                                <input type="text" id="username" name="username"/>
-                                <label>Username</label>
+                                <input type="text" id="username" name="username" style="border: 3px solid black"/>
+                                <label style="color: black"><b><span style="border: 3px solid black; padding: 2px; background: white">Username</span></b></label>
                             </div>
                             <div class="field">
-                                <input type="password" id="password" name="password"/>
-                                <label>Password</label>
+                                <input type="password" id="password" name="password" style="border: 3px solid black"/>
+                                <label style="color: black"><b><span style="border: 3px solid black; padding: 2px; background: white">Password</span></b></label>
                             </div>
                             <div class="field">
                                 <input type='submit' id='loginbtn' name='login' value='Login' />
                             </div>
                             <div class="signup-link">
-                                Not a member? <a href="register.php">Register now</a>
+                                <b>Not a member? <a href="register.php" style="color: black"><u>Register now</u></a></b>
                             </div>
-                            <div class="signup-link">
+                            <!-- <div class="signup-link">
                                 <a href="home.php">Surf without login</a>
-                            </div>
+                            </div> -->
                         </form>
                     </div>
                 </td>
