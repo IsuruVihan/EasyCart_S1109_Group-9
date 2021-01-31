@@ -81,11 +81,11 @@
         <div class="container">
           	<div class="fluid-container">
           		<center>
-                    <p style="margin: 1em; font-size: 3em"> 
-                        <b><span style="color: #e0ac1c; font-size: 2em">F</span>requently <span style="color: #e0ac1c; font-size: 2em">A</span>sked <span style="color: #e0ac1c; font-size: 2em">Q</span>uestions</b>	
+                    <p style="margin: 1em; font-size: 3em">
+                        <b><span style="color: #e0ac1c; font-size: 2em">F</span>requently <span style="color: #e0ac1c; font-size: 2em">A</span>sked <span style="color: #e0ac1c; font-size: 2em">Q</span>uestions</b>
                     </p>
                 </center>
-          	    
+
                 <table cellspacing="20">
                     <tr>
                         <!-- 1 -->
@@ -95,7 +95,7 @@
                                     <div class="icon">
                                     </div>
                                     <center>
-                                        <h4>How can I select the item category which <br>I need ?</h4>
+                                        <h4>How can I select the item category  which I need ?<br><br></h4>
                                     </center>
                                 </div>
                                 <div class="panel">
@@ -109,10 +109,10 @@
                                 <div class="accordian">
                                     <div class="icon">
                                     </div>
-                                    <h4>How can I select the item category which <br> I need ?</h4>
+                                    <h4>Is it permissible to sell more than one item at a time?<br></h4>
                                 </div>
                                 <div class="panel">
-                                    <p>The "Products" page has a filter option. Then select the desired category and click the "Filter" button. The system will then show you the items related to the category you want.</p>
+                                    <p>Yes,you can sell one or more items at a time.</p>
                                 </div>
                             </center>
                         </th>
@@ -125,11 +125,11 @@
                                     <div class="icon">
                                     </div>
                                     <center>
-                                        <h4>How can I select the item category which <br>I need ?</h4>
+                                        <h4>What is the payment method which i can use for buy items ?<br><br></h4>
                                     </center>
                                 </div>
                                 <div class="panel">
-                                    <p>The "Products" page has a filter option. Then select the desired category and click the "Filter" button. The system will then show you the items related to the category you want.</p>
+                                    <p>You are allowed to pay by card payment or "cash on delivery".</p>
                                 </div>
                             </center>
                         </th>
@@ -139,14 +139,84 @@
                                 <div class="accordian">
                                     <div class="icon">
                                     </div>
-                                    <h4>How can I select the item category which <br> I need ?</h4>
+                                    <h4>What can I do if there any damage in an item which I purchased ?</h4>
                                 </div>
                                 <div class="panel">
-                                    <p>The "Products" page has a filter option. Then select the desired category and click the "Filter" button. The system will then show you the items related to the category you want.</p>
+                                    <p>You must inform it. Fill out the "Return a Product" form on the home page.</p>
                                 </div>
                             </center>
                         </th>
                     </tr>
+
+                    <tr>
+                        <!-- 1 -->
+                        <th>
+                            <center>
+                                <div class="accordian">
+                                    <div class="icon">
+                                    </div>
+                                    <center>
+                                        <h4>Can I exchange an item I purchased, to another item of the same price?</h4>
+                                    </center>
+                                </div>
+                                <div class="panel">
+                                    <p>You will not be allowed to exchange products, but you will receive a replacement for any damaged product.</p>
+                                </div>
+                            </center>
+                        </th>
+                        <!-- 2 -->
+                        <th>
+                            <center>
+                                <div class="accordian">
+                                    <div class="icon">
+                                    </div>
+                                    <h4>How long will it take for me to receive the ordered item?</h4>
+                                </div>
+                                <div class="panel">
+                                    <p>You will receive the items you ordered within a week.</p>
+                                </div>
+                            </center>
+                        </th>
+                    </tr>
+
+
+
+                    <tr>
+                        <!-- 1 -->
+                        <th>
+                            <center>
+                                <div class="accordian">
+                                    <div class="icon">
+                                    </div>
+                                    <center>
+                                        <h4>Within how many days should inform about a damaged item ?<br><br></h4>
+                                    </center>
+                                </div>
+                                <div class="panel">
+                                    <p>You must inform us of any damaged items within one week of receiving them.</p>
+                                </div>
+                            </center>
+                        </th>
+                        <!-- 2 -->
+                        <th>
+                            <center>
+                                <div class="accordian">
+                                    <div class="icon">
+                                    </div>
+                                    <h4>Does the delivery charge depend on the quantity of items purchased?</h4>
+                                </div>
+                                <div class="panel">
+                                    <p>Delivery charges are depends on the distance traveled to deliver the items and the quantity of items does not consider.</p>
+                                </div>
+                            </center>
+                        </th>
+                    </tr>
+
+
+
+
+
+
                 </table>
 
                 <script >
@@ -154,7 +224,7 @@
                     var i;
                     var len = acc.length;
           		    for(i=0; i<len; i++) {
-          		        acc[i].addEventListener('click', 
+          		        acc[i].addEventListener('click',
                             function() {
           				        this.classList.toggle('active');
           				        var panel = this.nextElementSibling;
@@ -174,4 +244,3 @@
         <?php include('footer.php'); ?>
     </body>
 </html>
-
