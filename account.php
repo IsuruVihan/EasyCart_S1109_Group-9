@@ -179,6 +179,103 @@
             </table>
         </div>
 
+        <!-- My Products -->
+        <center>
+            <b><p style="font-size: 40px; margin-top: 1em">My Products</p></b>
+            <b><p style="font-size: 20px; color: black"><i>Yeah.. I'm the seller..</i></p></b>
+        </center>
+        <div class="table-wrapper">
+            <table style="border-spacing: 25px" class="fl-table">
+                <thead>
+                    <tr>
+                        <th>Product Id</th>
+                        <th>Item Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        // Rendering items published by the user 
+                        $usr = $_SESSION['username'];
+                        $sql = "SELECT * FROM products WHERE seller='$usr'";
+                        $result = mysqli_query($db, $sql);
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                $pid = $row['id'];
+                                $itemname = $row['name'];
+                                $description = $row['description'];
+                                $price = $row['price'];
+                                $category = $row['category'];
+                                echo "
+                                    <tr>
+                                        <td>$pid</td>
+                                        <td>$itemname</td>
+                                        <td>$description</td>
+                                        <td>$price</td>
+                                        <td>$category</td>
+                                        <td>
+                                            <form method='post' action='./account.php'>
+                                                <input type='text' id='pid' name='pid' value='$pid' style='display: none'>
+                                                <button type='submit' id='dele' name='dele'>Remove</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                ";
+                            }
+                        }
+
+                        // Revome a product
+                        if (isset($_POST['dele'])) {
+                            $pid = $_POST['pid'];
+                            $sql = "DELETE FROM products WHERE id='$pid'";
+                            $result = mysqli_query($db, $sql);
+                        }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Update -->
+        <div style="margin: 10em">
+            <?php include('update.php'); ?>
+        </div>
+
+        <!-- Delete Account -->
+        <center>
+            <div style="border: 3px solid red; width: 60%">
+                <h1 style='margin: 1em; color: red'>Delete Account</h1>
+                <h3>Any activity that you are supposed to do in this area cannot be undo under any circumanstance. <br>Administrator won't take responsiblity for the work that you are doing in this section.</h3>
+                <form action='account.php' method='post'>
+                    <button type='submit' id='deleteaccount' name='deleteaccount' 
+                        style= 'margin: 1em; 
+                                padding: 1em; 
+                                font-size: 20px; 
+                                background: red; 
+                                border: none; 
+                                border-radius: 10px; 
+                                color: white'
+                    >
+                        I agree, Delete my account
+                    </button>
+                </form>
+            </div>
+            <?php
+                if(isset($_POST['deleteaccount'])) {
+                    $uname = $_SESSION['username'];
+                    $sql = "DELETE FROM users WHERE username='$uname'";
+                    mysqli_query($db, $sql);
+                    $sql = "DROP TABLE $uname";
+                    mysqli_query($db, $sql);
+                    $sql = "DROP TABLE $uname" . "acc";
+                    mysqli_query($db, $sql);
+                    header('Location: login.php');
+                }
+            ?>
+        </center>
+
         <!-- Footer -->
         <?php include('footer.php'); ?>
     </body>

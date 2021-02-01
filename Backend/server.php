@@ -81,7 +81,7 @@ if (isset($_POST['register'])) {
     }
 }
 
-// Register a rider
+// Register a rider - Admin
 if (isset($_POST['registerrider'])) {
     $name = $_POST['name'];
     $email =$_POST['email'];
@@ -101,8 +101,6 @@ if (isset($_POST['registerrider'])) {
         $sql = "INSERT INTO users (fullname, email, username, password, admin)
                 VALUES ('$name', '$email', '$username', '$password', '2')";
         mysqli_query($db, $sql);
-        $_SESSION['username'] = $username;
-        $_SESSION['success'] = "You are now logged in";
         // Create 'tasks' table
         $sql = "CREATE TABLE " . $username . "tasks" . " (
             id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -120,6 +118,57 @@ if (isset($_POST['registerrider'])) {
         $sql = "CREATE TABLE " . $username . "bank" . " (
             id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
             taskId INT(10) NOT NULL,
+            total DECIMAL(50,2) NOT NULL,
+            date timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+        )";
+        mysqli_query($db, $sql);
+    }
+}
+
+// Register a user - Admin
+if (isset($_POST['registeruser'])) {
+    $name = $_POST['name'];
+    $email =$_POST['email'];
+    $username = $_POST['username'];
+    $password_1 = $_POST['password'];
+    $password_2 = $_POST['repassword'];
+
+    // Checking whether the passwords are matching
+    if ($password_1 != $password_2) {
+        array_push($errors, "The two passwords do not match");
+    }
+
+    // If there are no errors, save user to database
+    if (count($errors) == 0) {
+        // Encrypt password before storing in database (security purposes)
+        $password = md5($password_1);
+        $sql = "INSERT INTO users (fullname, email, username, password)
+                VALUES ('$name', '$email', '$username', '$password')";
+        mysqli_query($db, $sql);
+        // Create 'tasks' table
+        // Create a cart
+        $sql = "CREATE TABLE $username (
+            id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            seller VARCHAR(100) NOT NULL,
+            productId INT(10) NOT NULL,
+            itemname VARCHAR(100) NOT NULL,
+            category VARCHAR(20) NOT NULL,
+            quantity INT(20) NOT NULL,
+            rate DECIMAL(50,2) NOT NULL,
+            total DECIMAL(50,2) NOT NULL,
+            date timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+        )";
+        mysqli_query($db, $sql);
+
+        // Create an account
+        $sql = "CREATE TABLE " . $username . "acc" . " (
+            id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            buyer VARCHAR(100) NOT NULL,
+            productId INT(10) NOT NULL,
+            itemname VARCHAR(100) NOT NULL,
+            category VARCHAR(20) NOT NULL,
+            quantity INT(20) NOT NULL,
+            rate DECIMAL(50,2) NOT NULL,
             total DECIMAL(50,2) NOT NULL,
             date timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
         )";
@@ -174,11 +223,15 @@ if (isset($_POST['login'])) {
 
 // Add product
 if (isset($_POST['submitproduct'])) {
+    $imageLocation = '';
     $username = $_SESSION['username'];
     $productname = $_POST['productname'];
     $description = $_POST['description'];
     $price = $_POST['price'];
     $category = $_POST['productcategory'];
+    $filename = $_FILES['uploadfile']['name'];
+    $filetmpname = $_FILES['uploadfile']['tmp_name'];
+    $folder = "./Uploads";
     // Ensure that form fields are filled properly
     if (empty($productname)) {
         array_push($errors, "Product name is required");
@@ -194,8 +247,11 @@ if (isset($_POST['submitproduct'])) {
     }
     // If there are no errors, save the product to database
     if (count($errors) == 0) {
-        $sql = "INSERT INTO products (name, description, price, seller, category)
-                VALUES ('$productname', '$description', '$price', '$username', '$category')";
+        // Upload images
+        move_uploaded_file($filetmpname, $folder.$filename);
+
+        $sql = "INSERT INTO products (name, description, price, seller, category, imagename)
+                VALUES ('$productname', '$description', '$price', '$username', '$category', '$filename')";
         mysqli_query($db, $sql);
     }
 }

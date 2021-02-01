@@ -4,7 +4,7 @@ echo "
     <html>
         <head>
             <style>
-                input[type=text], select, textarea {
+                input[type=text], input[type=email], input[type=password], select, textarea {
                     width: 100%;
                     padding: 12px;
                     border: 1px solid #ccc;
@@ -65,71 +65,57 @@ echo "
         </head>
         <body>
             <div class='container' style='margin: 1em; margin-right: 3em; width: 95%; position: sticky; border: 1px solid black'>
-                <form action='products.php' method='post' enctype='multipart/form-data' style='position: sticky;'>
+                <form action='admin.php' method='post' style='position: sticky;'>
                     <center>
-                        <h1 style='margin: 0.7em'>Publish a product</h1>
+                        <h1 style='margin: 0.7em'>Register a User</h1>
                     </center>
                     <div class='row'>
                         <div class='col-25'>
-                            <label for='productname'>Product Name</label>
+                            <label for='name'>Full Name</label>
                         </div>
                         <div class='col-75'>
-                            <input type='text' id='productname' name='productname' placeholder='Product name...'>
+                            <input type='text' id='name' name='name' placeholder='User name...' required>
                         </div>
                     </div>
                     <div class='row'>
                         <div class='col-25'>
-                            <label for='description'>Description</label>
+                            <label for='email'>Email</label>
                         </div>
                         <div class='col-75'>
-                            <textarea id='description' name='description' placeholder='Product description...' style='height:200px' maxlength='40'></textarea>
+                            <input type='email' id='email' name='email' placeholder='User email...' required>
                         </div>
                     </div>
                     <div class='row'>
                         <div class='col-25'>
-                            <label for='price'>Price (Rs.)</label>
+                            <label for='username'>Username</label>
                         </div>
                         <div class='col-75'>
-                            <input type='text' id='price' name='price' placeholder='Product price...'>
+                            <input type='text' id='username' name='username' placeholder='User username...' required>
                         </div>
                     </div>
                     <div class='row'>
                         <div class='col-25'>
-                            <label for='productcategory'>Choose the product category</label>
+                            <label for='password'>Password</label>
                         </div>
                         <div class='col-75'>
-                            <select id='productcategory' name='productcategory'>
-                                <option value='Category1'>Category1</option>
-                                <option value='Category2'>Category2</option>
-                                <option value='Category3'>Category3</option>
-                                <option value='Category4'>Category4</option>
-                            </select>
+                            <input type='password' id='password' name='password' required>
                         </div>
                     </div>
-
-
-
-
-
                     <div class='row'>
                         <div class='col-25'>
-                            <label for='file'>Image</label>
+                            <label for='repassword'>Re-enter password</label>
                         </div>
                         <div class='col-75'>
-                            <input type='file' id='file' name='uploadfile' />
+                            <input type='password' id='repassword' name='repassword' required>
                         </div>
                     </div>
-
-
-
-
-
                     <div class='row'>
-                        <input type='submit' id='submitproduct' value='Submit' name='submitproduct' style='background: #e0ac1c' />
+                        <input type='submit' id='registeruser' value='Submit' name='registeruser' style='background: #e0ac1c'>
                     </div>
                 </form>
             </div>
         </body>
-    </html>";
+    </html>
+";
 
 ?>

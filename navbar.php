@@ -9,7 +9,7 @@
                     box-sizing: border-box;
                     font-family: 'Poppins', sans-serif;
                 }
-
+                        
                 nav {
                     display: flex;
                     height: 90px;
@@ -20,23 +20,23 @@
                     padding: 0 50px 0 100px;
                     flex-wrap: wrap;
                 }
-
+                        
                 nav .logo {
                     color: #fff;
                     font-size: 35px;
                     font-weight: 600;
                 }
-
+                        
                 nav ul {
                     display: flex;
                     flex-wrap: wrap;
                     list-style: none;
                 }
-
+                        
                 nav ul li {
                     margin: 0 5px;
                 }
-
+                        
                 nav ul li a {
                     color: #f2f2f2;
                     text-decoration: none;
@@ -47,30 +47,30 @@
                     letter-spacing: 1px;
                     transition: all 0.3s ease;
                 }
-
+                        
                 nav ul li a.active,
                 nav ul li a:hover {
                     color: #111;
                     background: #fff;
                 }
-
+                        
                 nav .menu-btn i {
                     color: #fff;
                     font-size: 22px;
                     cursor: pointer;
                     display: none;
                 }
-
+                        
                 input[type='checkbox'] {
                     display: none;
                 }
-
+                        
                 @media (max-width: 1000px) {
                     nav {
                         padding: 0 40px 0 50px;
                     }
                 }
-
+                        
                 @media (max-width: 920px) {
                     nav .menu-btn i {
                         display: block;
@@ -106,13 +106,13 @@
                     #click:checked ~ ul li a {
                         margin-left: 0px;
                     }
-                   nav ul li a.active,
+                    nav ul li a.active,
                     nav ul li a:hover {
                         background: none;
                         color: cyan;
                     }
                 }
-
+                        
                 .content {
                     position: absolute;
                     top: 50%;
@@ -124,7 +124,7 @@
                     padding: 0 30px;
                     color: #1b1b1b;
                 }
-
+                        
                 .content div {
                     font-size: 40px;
                     font-weight: 700;
@@ -159,27 +159,27 @@
                         }
                     ?>
                     <?php
-                        if (!isset($_SESSION['rider']) && !isset($_SESSION['admin'])) {
+                        if (!isset($_SESSION['rider']) && !isset($_SESSION['admin'])) { 
                             echo "
                                 <li><a href='./account.php'>Account</a></li>
                             ";
-                        }
+                        } 
                     ?>
                     <!-- <?php
-                        if (!isset($_SESSION['rider']) && !isset($_SESSION['admin'])) {
+                        if (!isset($_SESSION['rider']) && !isset($_SESSION['admin'])) { 
                             echo "
                                 <li><a href='./account.php'>Account</a></li>
                                 <li><a href='./cart.php'>Cart</a></li>
                             ";
-                        }
+                        } 
                     ?> -->
                     <?php
-                        if (isset($_SESSION['rider'])) {
+                        if (isset($_SESSION['rider'])) { 
                             echo "
                                 <li><a href='./bank.php'>Bank</a></li>
                                 <li><a href='./tasks.php'>Tasks</a></li>
                             ";
-                        }
+                        } 
                     ?>
                     <li>
                         <a href='./Backend/logout.php'>
@@ -190,4 +190,5 @@
             </nav>
             <!-- <script src='https://kit.fontawesome.com/a076d05399.js'></script> -->
         </body>
-    </html>
+    </html>  
+    

@@ -81,12 +81,12 @@
         <div class="container">
           	<div class="fluid-container">
           		<center>
-                    <p style="margin: 1em; font-size: 3em">
-                        <b><span style="color: #e0ac1c; font-size: 2em">F</span>requently <span style="color: #e0ac1c; font-size: 2em">A</span>sked <span style="color: #e0ac1c; font-size: 2em">Q</span>uestions</b>
+                    <p style="margin: 1em; font-size: 3em"> 
+                        <b><span style="color: #e0ac1c; font-size: 2em">F</span>requently <span style="color: #e0ac1c; font-size: 2em">A</span>sked <span style="color: #e0ac1c; font-size: 2em">Q</span>uestions</b>	
                     </p>
                 </center>
-
-                <table cellspacing="20">
+          	    
+                <table cellspacing="30">
                     <tr>
                         <!-- 1 -->
                         <th>
@@ -109,7 +109,7 @@
                                 <div class="accordian">
                                     <div class="icon">
                                     </div>
-                                    <h4>Is it permissible to sell more than one item at a time?<br></h4>
+                                    <h4>Is it permissible to sell more than one item at a time?<br><br></h4>
                                 </div>
                                 <div class="panel">
                                     <p>Yes,you can sell one or more items at a time.</p>
@@ -156,7 +156,7 @@
                                     <div class="icon">
                                     </div>
                                     <center>
-                                        <h4>Can I exchange an item I purchased, to another item of the same price?</h4>
+                                        <h4>Can I exchange an item I purchased, to another item of the same price?<br><br></h4>
                                     </center>
                                 </div>
                                 <div class="panel">
@@ -178,9 +178,6 @@
                             </center>
                         </th>
                     </tr>
-
-
-
                     <tr>
                         <!-- 1 -->
                         <th>
@@ -211,12 +208,6 @@
                             </center>
                         </th>
                     </tr>
-
-
-
-
-
-
                 </table>
 
                 <script >
@@ -224,7 +215,7 @@
                     var i;
                     var len = acc.length;
           		    for(i=0; i<len; i++) {
-          		        acc[i].addEventListener('click',
+          		        acc[i].addEventListener('click', 
                             function() {
           				        this.classList.toggle('active');
           				        var panel = this.nextElementSibling;
@@ -244,3 +235,4 @@
         <?php include('footer.php'); ?>
     </body>
 </html>
+

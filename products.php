@@ -20,12 +20,8 @@
                             // Display errors related to adding a product/rider
                             include('errors.php');
 
-                            // Add product / rider
-                            if (isset($_SESSION['username']) && $_SESSION['username'] != 'ucsc') {
-                                include('addproduct.php');
-                            } else if ($_SESSION['username'] == 'ucsc') {
-                                include('addrider.php');
-                            }
+                            // Add product
+                            include('addproduct.php');
                         ?>
                     </th>
                     <th style='border: 1px solid black; width: 60%; vertical-align: top; height: 23%; border-radius: 10px; background: #f2f2f2'>
@@ -85,7 +81,9 @@
                                                         <input value=$id name='productid' id='productid' style='display: none'></input><br>
                                                         <table style='border: 2px solid black; width: 100%; border-radius: 10px; background: #f2f2f2;' cellspacing='10'>
                                                             <tr>
-                                                                <td rowspan='4' style='border: 1px solid black; width: 30%'></td>
+                                                                <td rowspan='4' style='border: 1px solid black; width: 30%'>
+                                                                    
+                                                                </td>
                                                                 <td name='name'><h2>$name</h2></td>
                                                             </tr>
                                                             <tr>

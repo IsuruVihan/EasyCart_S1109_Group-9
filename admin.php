@@ -167,6 +167,128 @@
             </table>
         </div>
 
+        <!-- Users Table -->
+        <center>
+            <b><p style="font-size: 40px; margin-top: 1em">Users & Riders</p></b>
+            <b><p style="font-size: 20px; color: black"><i>All the details about Users & Riders...</i></p></b>
+        </center>
+        <div class="table-wrapper">
+            <table style="border-spacing: 25px" class="fl-table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Registered Date</th>
+                        <th>Privilage Type</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        // Rendering transaction details
+                        $sql = "SELECT * FROM users";
+                        $result = mysqli_query($db, $sql);
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                $id = $row['id'];
+                                $fname = $row['fullname'];
+                                $email = $row['email'];
+                                $username = $row['username'];
+                                $password = $row['password'];
+                                $regdate = $row['reg_date'];
+                                $privilage = $row['admin'];
+
+                                if((int)$privilage==1) {
+                                    echo "
+                                        <tr>
+                                            <td>$id</td>
+                                            <td>$fname</td>
+                                            <td>$email</td>
+                                            <td>$username</td>
+                                            <td>$password</td>
+                                            <td>$regdate</td>
+                                            <td>$privilage</td>
+                                            <td></td>
+                                        </tr>
+                                    ";
+                                } else {
+                                    echo "
+                                        <tr>
+                                            <td>$id</td>
+                                            <td>$fname</td>
+                                            <td>$email</td>
+                                            <td>$username</td>
+                                            <td>$password</td>
+                                            <td>$regdate</td>
+                                            <td>$privilage</td>
+                                            <td>
+                                                <form method='post' action='./admin.php'>
+                                                    <input type='text' id='priv' name='priv' value='$privilage' style='display: none'>
+                                                    <input type='text' id='usrnm' name='usrnm' value='$username' style='display: none'>
+                                                    <input type='text' id='uid' name='uid' value='$id' style='display: none'>
+                                                    <button type='submit' id='del' name='del'>Remove</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    ";
+                                }
+                            }
+                        }
+
+                        // Revome a User/Rider
+                        if (isset($_POST['del'])) {
+                            $id = $_POST['uid'];
+                            $uname = $_POST['usrnm'];
+                            $privilage = (int)$_POST['priv'];
+                            $sql = "DELETE FROM users WHERE id='$id'";
+                            mysqli_query($db, $sql);
+                            if($privilage==2) {
+                                $sql = "DROP TABLE $uname" . "bank";
+                            } else {
+                                $sql = "DROP TABLE $uname";
+                            }
+                            mysqli_query($db, $sql);
+                            if($privilage==2) {
+                                $sql = "DROP TABLE $uname" . "tasks";
+                            } else {
+                                $sql = "DROP TABLE $uname" . "acc";
+                            }
+                            mysqli_query($db, $sql);
+                        }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Users/Riders Registration -->
+        <center>
+            <b><p style="font-size: 40px; margin-top: 1em">Register Users | Riders</p></b>
+            <b><p style="font-size: 20px; color: black"><i>Create a new seller, buyer or rider...</i></p></b>
+        </center>
+        <center>
+            <table>
+                <tr>
+                    <th>
+                        <div style="margin: 2em">
+                            <?php
+                                include('addrider.php');
+                            ?>
+                        </div>
+                    </th>
+                    <th>
+                        <div style="margin: 4em">
+                            <?php
+                                include('adduser.php');
+                            ?>
+                        </div>
+                    </th>
+                </tr>
+            </table>
+        </center>
+
         <!-- Footer -->
         <?php include('footer.php'); ?>
     </body>
