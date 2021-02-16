@@ -165,14 +165,6 @@
                             ";
                         } 
                     ?>
-                    <!-- <?php
-                        if (!isset($_SESSION['rider']) && !isset($_SESSION['admin'])) { 
-                            echo "
-                                <li><a href='./account.php'>Account</a></li>
-                                <li><a href='./cart.php'>Cart</a></li>
-                            ";
-                        } 
-                    ?> -->
                     <?php
                         if (isset($_SESSION['rider'])) { 
                             echo "
@@ -188,7 +180,6 @@
                     </li>
                 </ul>
             </nav>
-            <!-- <script src='https://kit.fontawesome.com/a076d05399.js'></script> -->
         </body>
     </html>  
     

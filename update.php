@@ -147,7 +147,7 @@ echo "
     </html>
 ";
 
-// If the 'Register' button is clicked
+// Update user details
 if (isset($_POST['updateacc'])) {
     $fullname = $_POST['name'];
     $email = $_POST['email'];

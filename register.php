@@ -3,12 +3,9 @@
 <html>
     <head>
         <title>EasyCart | Registration</title>
-        <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous" /> -->
-        <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" /> -->
         <link rel="stylesheet" href="register.css" />
     </head>
     <style>
-        /* @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap'); */
         * {
                 margin: 0;
                 padding: 0;
@@ -178,34 +175,6 @@
             <tr>
                 <td>
                     <table style="border: 0px solid black; padding-right: '2em'">
-                        <!-- <tr>
-                            <td>
-                                <center>
-                                    <b><p style="font-size: 40px; color: black; margin-bottom: 2em">Start shopping <span style='color: #e0ac1c'>with us...</span></p></b>
-                                </center>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <center>
-                                    <img src="./images/cart.png" style="width: 50%">
-                                </center>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <center>
-                                    <b><p style="font-size: 60px; color: black">Easy<span style='color: #e0ac1c'><i>Cart</i></span></p></b>
-                                </center>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <center>
-                                    <b><p style="font-size: 20px; color: black">Everything you need to buy in <span style='color: #e0ac1c'>one place</span></p></b>
-                                </center>
-                            </td>
-                        </tr> -->
                         <tr>
                             <td>
                                 <center>

@@ -5,20 +5,10 @@
         <title>EasyCart | Home</title>
         <link rel="stylesheet" href="navbar.css">
         <link rel="stylesheet" href="./styles/stylesforindex.css">
-        <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
-    	<!-- <link rel="preconnect" href="https://fonts.gstatic.com" /> -->
-  		<!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" /> -->
     </head>
     <body style="background: url('./images/doodle2')">
         <!-- Navbar -->
         <?php include('navbar.php'); ?>
-
-        <!-- <?php if(isset($_SESSION['success'])): ?>
-            <?php
-                echo $_SESSION['success'];
-                unset($_SESSION['success']);
-            ?>
-        <?php endif ?> -->
     
         <?php if (isset($_SESSION['username'])): ?>
             <center>
@@ -28,7 +18,6 @@
                     </center>
                 </div>
             </center>
-            <!-- <p><a href="index.php?logout='1'" name="logout">Logout</a></p> -->
         <?php endif ?>
     
         <!--------featured categories-------->
@@ -124,7 +113,7 @@
                                 <li><b>Streamlined, round cable</b></li>
                             </ul>
                         </small>
-                        <a href="" class="btn"><b>Buy Now &#8594;</b></a>
+                        <a href="./products.php" class="btn"><b>Buy Now &#8594;</b></a>
                     </div>
                 </div>
             </div>

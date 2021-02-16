@@ -175,27 +175,6 @@
             <tr>
                 <td>
                     <table style="border: 0px solid black; padding-right: '2em'">
-                        <!-- <tr>
-                            <td>
-                                <center>
-                                    <img src="./images/cart.png" style="width: 50%">
-                                </center>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <center>
-                                    <b><p style="font-size: 60px; color: black">Easy<span style='color: #e0ac1c'><i>Cart</i></span></p></b>
-                                </center>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <center>
-                                    <b><p style="font-size: 20px; color: black">Everything you need to buy in <span style='color: #e0ac1c'>one place</span></p></b>
-                                </center>
-                            </td>
-                        </tr> -->
                         <tr>
                             <td>
                                 <center>

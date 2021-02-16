@@ -4,7 +4,6 @@
     <head>
         <title>EasyCart | My Account - <?php echo $_SESSION['username'] ?></title>
         <link rel="stylesheet" href="./styles/table.css">
-        <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
         <style>
             body {
                 background: white;
@@ -31,8 +30,8 @@
                         <th>Quantity</th>
                         <th>Rate</th>
                         <th>Total</th>
-                        <th>Actions</th>
                         <th>Date</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,15 +64,29 @@
                                         <td>$total</td>
                                         <td>$date</td>
                                         <td>
-                                            <form method='post' action='cart.php'>
-                                                <input type='text' name='id' id='id' value='$id' style='display: none' />
-                                                <input type='submit' name='delete' id='delete' value='Remove' />
-                                            </form>
-                                            <form method='post' action='cart.php'>
-                                                <input type='text' name='id' id='id' value='$id' style='display: none' />
-                                                <input type='text' id='address' name='address' />
-                                                <button type='submit' name='buy' id='buy'>Buy</button>
-                                            </form>
+                                            <table>
+                                                <tr>
+                                                    <th>
+                                                        <form method='post' action='account.php'>
+                                                            <input type='text' name='id' id='id' value='$id' style='display: none' />
+                                                            <input type='text' id='address' name='address' placeholder='Address to be delivered...' />
+                                                            <button type='submit' name='buy' id='buy' style='color: white; background: green; padding: 0.9em; border: none; border-radius: 5px'>Buy</button>
+                                                        </form>
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <center>
+                                                            <form method='post' action='account.php'>
+                                                                <input type='text' name='id' id='id' value='$id' style='display: none' />
+                                                                </center>
+                                                                    <input type='submit' name='delete' id='delete' value='Remove' style='background: red' />
+                                                                </center>                                                           
+                                                            </form>
+                                                        </center>
+                                                    </td>
+                                                </tr>
+                                            </table>
                                         </td>
                                     </tr>
                                 ";
@@ -107,9 +120,15 @@
                                         mysqli_query($db, $sql);
 
                                         // That particular product won't exist in the cart anymore
-                                        $sql = "DELETE FROM " . $_SESSION['username'] . " WHERE id = " . $_POST['id'];
-                                        mysqli_query($db, $sql);
+                                        // $sql = "DELETE FROM " . $_SESSION['username'] . " WHERE id = " . $_POST['id'];
+                                        // mysqli_query($db, $sql);
                                     }
+                                }
+
+                                // Delete a product from the cart
+                                if (isset($_POST['delete'])) {
+                                    $sql = "DELETE FROM " . $_SESSION['username'] . " WHERE id = " . $_POST['id'];
+                                    mysqli_query($db, $sql);
                                 }
                             }
                         }
@@ -154,12 +173,6 @@
                                 $total = $row['total'];
                                 $date = $row['date'];
 
-                                // Send the transaction details to admin
-                                // $seller = $_SESSION['username'];
-                                // $tax = 0.15 * (double)$total;
-                                // $sql2 = "INSERT INTO transactions (pid, buyer, seller, amount, taxrate, tax) 
-                                //         VALUES ('$pid', '$buyer', '$seller', '$total', '0.15', '$tax')";
-                                // $result2 = mysqli_query($db, $sql2);
                                 echo "
                                     <tr>
                                         <td>$buyer</td>
@@ -219,7 +232,7 @@
                                         <td>
                                             <form method='post' action='./account.php'>
                                                 <input type='text' id='pid' name='pid' value='$pid' style='display: none'>
-                                                <button type='submit' id='dele' name='dele'>Remove</button>
+                                                <button type='submit' id='dele' name='dele' style='padding: 0.9em; color: white; background: red; border: none; border-radius: 5px'>Remove</button>
                                             </form>
                                         </td>
                                     </tr>
@@ -271,7 +284,7 @@
                     mysqli_query($db, $sql);
                     $sql = "DROP TABLE $uname" . "acc";
                     mysqli_query($db, $sql);
-                    header('Location: login.php');
+                    header('location: login.php');
                 }
             ?>
         </center>

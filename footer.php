@@ -1,9 +1,7 @@
 <html>
     <head>
         <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
-        <!-- <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'> -->
         <style>
-            /* @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700'); */
 
             *{
                 padding:0;

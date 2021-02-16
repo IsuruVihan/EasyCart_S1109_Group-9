@@ -99,18 +99,21 @@ echo "
                         </div>
                         <div class='col-75'>
                             <select id='productcategory' name='productcategory'>
-                                <option value='Category1'>Category1</option>
-                                <option value='Category2'>Category2</option>
-                                <option value='Category3'>Category3</option>
-                                <option value='Category4'>Category4</option>
+                                <option value='Shapewear'>Shapewear</option>
+                                <option value='Travelaccessories'>Travel accessories</option>
+                                <option value='Healthyandbeautyproducts'>Healthy and beauty products</option>
+                                <option value='Sleepwear'>Sleepwear</option>
+                                <option value='Smartwatches'>Smart watches</option>
+                                <option value='HealthCare'>Health Care</option>
+                                <option value='SkinCare'>Skin Care</option>
+                                <option value='HobbiesandCraft'>Hobbies and Craft</option>
+                                <option value='LampsandShades'>Lamps and Shades</option>
+                                <option value='MobileAccessories'>Mobile Accessories</option>
+                                <option value='Petproducts'>Pet products</option>
+                                <option value='Finejewelry'>Fine jewelry</option>
                             </select>
                         </div>
                     </div>
-
-
-
-
-
                     <div class='row'>
                         <div class='col-25'>
                             <label for='file'>Image</label>
@@ -119,11 +122,6 @@ echo "
                             <input type='file' id='file' name='uploadfile' />
                         </div>
                     </div>
-
-
-
-
-
                     <div class='row'>
                         <input type='submit' id='submitproduct' value='Submit' name='submitproduct' style='background: #e0ac1c' />
                     </div>
