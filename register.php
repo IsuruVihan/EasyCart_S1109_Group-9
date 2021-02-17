@@ -3,10 +3,10 @@
 <html>
     <head>
         <title>EasyCart | Registration</title>
-        <link rel="stylesheet" href="register.css" />
+        
     </head>
     <style>
-        * {
+            * {                
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
@@ -28,11 +28,6 @@
                 background: white;
             }
 
-            ::selection {
-                background: #4158d0;
-                color: #fff;
-            }
-
             .wrapper {
                 float: left;
                 position: sticky;
@@ -44,7 +39,6 @@
                 border-top: 3px solid black;
                 border-bottom: 3px solid black;
                 border-radius: 15px;
-                /* box-shadow: 0px 40px 40px rgba(0,0,0,0.1); */
             }
 
             .wrapper .title {
@@ -55,7 +49,6 @@
                 color: black;
                 user-select: none;
                 border-radius: 15px 15px 0 0;
-                /* background: #e0ac1c; */
             }
 
             .wrapper form {
@@ -115,12 +108,6 @@
                 justify-content: space-around;
             }
 
-            form .content .checkbox {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
             form .content input {
                 width: 15px;
                 height: 15px;
@@ -159,13 +146,11 @@
                 text-align: center;
             }
 
-            form .pass-link a,
             form .signup-link a {
                 color: #4158d0;
                 text-decoration: none;
             }
 
-            form .pass-link a:hover,
             form .signup-link a:hover {
                 text-decoration: underline;
             }

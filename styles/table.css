@@ -1,14 +1,9 @@
-*{
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-}
-body{
+body {
     font-family: Helvetica;
-    -webkit-font-smoothing: antialiased;
     background: #f2f2f2;
 }
-h2{
+
+h2 {
     text-align: center;
     font-size: 18px;
     text-transform: uppercase;
@@ -19,7 +14,7 @@ h2{
 
 /* Table Styles */
 
-.table-wrapper{
+.table-wrapper {
     margin-top: 4em;
     margin-left: 12em;
     margin-right: 12em;

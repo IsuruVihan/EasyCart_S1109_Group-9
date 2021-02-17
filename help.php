@@ -13,16 +13,19 @@
                 background-repeat: no-repeat;
                 background-size: cover;
             }
+
             .fluid-container {
                 width: 80%;
         	    margin: 0 auto;
         	    margin-top: 10px;
             }
+
             .fluid-container h2 {
         		color: #3a3b3c;
         		position: relative;
         		width: 23rem;
         	}
+
             .fluid-container h2::after {
         	    content: "";
         	    position: absolute;
@@ -32,6 +35,7 @@
         	    height: 2px;
         	    background-color: #3a3b3c;
             }
+            
             .accordian {
         	    width: 100%;
         	    padding: 0 5px;

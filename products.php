@@ -17,8 +17,9 @@
                             // Display errors related to adding a product/rider
                             include('errors.php');
 
-                            // Add product
+                            // Publish product
                             include('addproduct.php');
+
                             // Add product
                             if (isset($_POST['submitproduct'])) {
                                 $imageLocation = '';
@@ -51,7 +52,6 @@
                                     $sql = "INSERT INTO products (name, description, price, seller, category, imagename)
                                             VALUES ('$productname', '$description', '$price', '$username', '$category', '$filename')";
                                     mysqli_query($db, $sql);
-                                    unset($_POST['submitproduct']);
                                 }
                             }
                         ?>

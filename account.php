@@ -284,7 +284,6 @@
                     mysqli_query($db, $sql);
                     $sql = "DROP TABLE $uname" . "acc";
                     mysqli_query($db, $sql);
-                    header('location: login.php');
                 }
             ?>
         </center>

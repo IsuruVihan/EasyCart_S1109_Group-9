@@ -4,7 +4,6 @@
     <head>
         <title>EasyCart | Login</title>
         <style>
-            /* @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap'); */
             * {
                 margin: 0;
                 padding: 0;
@@ -27,11 +26,6 @@
                 background: white;
             }
 
-            ::selection {
-                background: #4158d0;
-                color: #fff;
-            }
-
             .wrapper {
                 float: left;
                 position: sticky;
@@ -43,7 +37,6 @@
                 border-top: 3px solid black;
                 border-bottom: 3px solid black;
                 border-radius: 15px;
-                /* box-shadow: 0px 40px 40px rgba(0,0,0,0.1); */
             }
 
             .wrapper .title {
@@ -54,7 +47,6 @@
                 color: black;
                 user-select: none;
                 border-radius: 15px 15px 0 0;
-                /* background: #e0ac1c; */
             }
 
             .wrapper form {
@@ -74,7 +66,7 @@
                 outline: none;
                 font-size: 17px;
                 padding-left: 20px;
-                border: 1px solid lightgrey;
+                border: 3px solid black;
                 border-radius: 25px;
                 transition: all 0.3s ease;
             }
@@ -114,12 +106,6 @@
                 justify-content: space-around;
             }
 
-            form .content .checkbox {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
             form .content input {
                 width: 15px;
                 height: 15px;
@@ -130,10 +116,6 @@
                 color: #e0ac1c;
                 user-select: none;
                 padding-left: 5px;
-            }
-
-            form .content .pass-link {
-                color: #e0ac1c;
             }
 
             form .field input[type="submit"] {
@@ -157,16 +139,10 @@
                 margin-top: 20px;
                 text-align: center;
             }
-
-            form .pass-link a,
+            
             form .signup-link a {
                 color: #4158d0;
                 text-decoration: none;
-            }
-
-            form .pass-link a:hover,
-            form .signup-link a:hover {
-                text-decoration: underline;
             }
         </style>
     </head>
@@ -195,11 +171,11 @@
                                 <?php include('errors.php'); ?>
                             </div>
                             <div class="field">
-                                <input type="text" id="username" name="username" style="border: 3px solid black"/>
+                                <input type="text" id="username" name="username"/>
                                 <label style="color: black"><b><span style="border: 3px solid black; padding: 2px; background: white">Username</span></b></label>
                             </div>
                             <div class="field">
-                                <input type="password" id="password" name="password" style="border: 3px solid black"/>
+                                <input type="password" id="password" name="password"/>
                                 <label style="color: black"><b><span style="border: 3px solid black; padding: 2px; background: white">Password</span></b></label>
                             </div>
                             <div class="field">
@@ -208,9 +184,6 @@
                             <div class="signup-link">
                                 <b>Not a member? <a href="register.php" style="color: black"><u>Register now</u></a></b>
                             </div>
-                            <!-- <div class="signup-link">
-                                <a href="home.php">Surf without login</a>
-                            </div> -->
                         </form>
                     </div>
                 </td>

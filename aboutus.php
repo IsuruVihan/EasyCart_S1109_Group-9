@@ -3,7 +3,6 @@
 <html>
     <head>
         <title>EasyCart | About</title>
-        <link rel="stylesheet" type="text/css" href="./styles/aboutusstyles.css">
     </head>
     <body style="background: url('./images/doodle2')">
         <!-- Navbar -->
@@ -17,25 +16,25 @@
             <table>
                 <tr>
                     <th>
-                        <div class="col-4">
+                        <div>
                             <img src="./images/developers/isuru.png" width="80%" alt="" >
                             <p style="text-align:center;"><b>Isuru Vihan</b></p>
                         </div>
                     </th>
                     <th>
-                        <div class="col-4">
+                        <div>
                             <img src="./images/developers/avishka.png" width="80%" alt="" >
                             <p style="text-align:center;"><b>Avishka</b></p>
                         </div>
                     </th>
                     <th>
-                        <div class="col-4">
+                        <div>
                             <img src="./images/developers/tolusha.png" width="80%" alt="" >
                             <p style="text-align:center;"><b>Tolusha </b></p>
                         </div>
                     </th>
                     <th>
-                        <div class="col-4">
+                        <div>
                             <img src="./images/developers/piruna.png" width="80%" alt="" >
                             <p style="text-align:center;"><b>Piruna </b></p>
                         </div>
